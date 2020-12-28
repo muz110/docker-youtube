@@ -13,12 +13,12 @@ scripts:
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: &3
+  secret_access_key: 
     secure: "$AWS_SECRET_ACCESS_KEY"
   region: "us-east-2"
   app: "docker-youtube"
   env: "DockerYoutube-env"
   bucket_name: "elasticbeanstalk-us-east-2-251636963513"
-  bucket_path: "docker-youtube-bucket"
+  bucket_path: "docker-youtube"
   on:
     branch: main
