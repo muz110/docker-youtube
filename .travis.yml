@@ -18,7 +18,6 @@ deploy:
   region: "us-east-2"
   app: "docker-youtube"
   env: "DockerYoutube-env"
-  bucket: code-deploy-builds
-  
+  bucket_name: "elasticbeanstalk-us-east-2-251636963513"
   on:
-      all_branches: true
+    branch: main
