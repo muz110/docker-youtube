@@ -6,7 +6,7 @@ before_install:
     - docker build -t dockeryoutube -f Dockerfile.dev .
 
 scripts:
-    - dockerfile run -e CI=true dockeryoutube npm run test      
+    - docker run -e CI=true dockeryoutube npm run test      
 
 
 
@@ -22,4 +22,3 @@ deploy:
   bucket_path: "docker-youtube-bucket"
   on:
     branch: main
-    
