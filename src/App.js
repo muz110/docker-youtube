@@ -6,8 +6,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p> An amazing startup idea Muntazir Jatoi's is Amazing Idea of life </p>
-        <p> Production Server up and Running Wooo </p>
+        <p> Jatoi Soft or JSoft </p>
+        <p> An amazing startup idea and Amazing Idea of life </p>
+        <p> Staging Test Server up and Running Wooo </p>
 
       </header>
     </div>
