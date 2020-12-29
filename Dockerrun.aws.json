@@ -1,0 +1,17 @@
+{
+    "AWSEBDockerrunVersion" : 2,
+    "containerDefinitions": [
+        {
+          "name": "dockeryoutube",
+          "image": "muzafardba/dockeryoutube",
+          "essential": true,
+          "portMappings": [
+            {
+              "containerPort": 3000,
+              "hostPort": 3000
+            }
+          ],
+          "memory": 500
+        }
+     ]
+}
