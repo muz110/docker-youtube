@@ -1,27 +1,23 @@
-sudo: required 
+sudo: required
 services:
-    - docker
-
+   - docker
+ 
 before_install:
-    - docker build -t dockeryoutube -f Dockerfile.dev .
-
+   - docker build -t dockeryoutube -f Dockerfile.dev .
+ 
 script:
-    - docker run -e CI=true dockeryoutube npm run test      
-
-after_success:
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
-    - docker push dockeryoutube
-  
- deploy:
-  provider: elasticbeanstalk
-  access_key_id: $AWS_ACCESS_KEY_ID
-  secret_access_key: $AWS_SECRET_ACCESS_KEY
-  region: "us-east-2"
+   - docker run -e CI=true dockeryoutube npm run test     
+ 
+deploy:
+ skip_cleanup:  true
+ provider: elasticbeanstalk
+ access_key_id: $AWS_ACCESS_KEY_ID
+ secret_access_key:
+   secure: "$AWS_SECRET_ACCESS_KEY"
+ region: "us-east-2"
   app: "test-you-tube"
   env: "TestYouTube-env"
   bucket_name: "elasticbeanstalk-us-east-2-251636963513"
   bucket_path: "test-you-tube"
-  on:
-      branch: main
- 
+ on:
+   branch: main   
