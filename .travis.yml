@@ -5,19 +5,22 @@ services:
 before_install:
    - docker build -t dockeryoutube -f Dockerfile.dev .
  
-script:
+scripts:
    - docker run -e CI=true dockeryoutube npm run test     
  
+ 
+ 
 deploy:
- skip_cleanup:  true
- provider: elasticbeanstalk
+ provider: s3
+  
  access_key_id: $AWS_ACCESS_KEY_ID
  secret_access_key:
    secure: "$AWS_SECRET_ACCESS_KEY"
- region: "us-east-2"
+  region: "us-east-2"
   app: "test-you-tube"
   env: "TestYouTube-env"
   bucket_name: "elasticbeanstalk-us-east-2-251636963513"
   bucket_path: "test-you-tube"
  on:
-   branch: main   
+   branch: main
+
