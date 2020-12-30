@@ -24,5 +24,5 @@ after_success:
   bucket_name: "elasticbeanstalk-us-east-2-251636963513"
   bucket_path: "test-you-tube"
   on:
-      branch: master
+      branch: main
  
